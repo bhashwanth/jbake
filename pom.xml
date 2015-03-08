@@ -26,11 +26,11 @@
 		</developer>
 	</developers>
 
-	<scm>
+	<!-- <scm>
 		<url>https://github.com/jbake-org/jbake/</url>
 		<connection>scm:git:git@github.com:jbake-org/jbake.git</connection>
 		<developerConnection>scm:git:https://github.com/jbake-org/jbake.git</developerConnection>
-	</scm>
+	</scm> -->
 	
 	<issueManagement>
 		<system>GitHub Issues</system>
@@ -257,7 +257,64 @@
 					</execution>
 				</executions>
         	</plugin>
+        	
+        	
+        	
+        	
         	<plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>2.4.0</version>
+          <configuration>
+              <effort>Max</effort>
+              <failOnError>true</failOnError>
+              <threshold>High</threshold>
+              <xmlOutput>true</xmlOutput>
+          </configuration>
+          <executions>
+              <execution>
+                  <id>findbugs-report</id>
+                  <phase>package</phase>
+                  <goals>
+                      <goal>findbugs</goal>
+                  </goals>
+              </execution>
+          </executions>
+        </plugin>
+        	
+        	
+        	
+        	<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <version>2.7.1</version>
+            <configuration>
+            <rulesets>
+            <ruleset>basic.xml</ruleset>
+          	</rulesets>
+                <targetJdk>1.6</targetJdk>
+                <linkXref>false</linkXref>
+                <failOnViolation>true</failOnViolation>
+                <failurePriority>1</failurePriority>
+                
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	<!-- <plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.2.201409121644</version>
@@ -269,7 +326,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
@@ -399,4 +456,33 @@
             <optional>true</optional>
         </dependency>
 	</dependencies>
+	<reporting>
+	
+	<plugins>
+	<plugin>
+   <groupId>org.codehaus.mojo</groupId>
+   <artifactId>findbugs-maven-plugin</artifactId>
+   <version>2.5.2</version>
+   <configuration>
+      <failOnError>false</failOnError>
+      <threshold>High</threshold>
+      <effort>Default</effort>
+      <xmlOutput>true</xmlOutput>
+      
+   </configuration>
+  </plugin>
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.4</version>
+	<configuration>
+      <failOnError>false</failOnError>
+      <threshold>High</threshold>
+      <effort>Default</effort>
+      <xmlOutput>true</xmlOutput>
+      
+   </configuration>        
+      </plugin>
+  </plugins>
+  </reporting>
 </project>
