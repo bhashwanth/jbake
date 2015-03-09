@@ -293,7 +293,7 @@
             <ruleset>basic.xml</ruleset>
           	</rulesets>
                 <targetJdk>1.6</targetJdk>
-                <linkXref>false</linkXref>
+                <!-- <linkXref>false</linkXref> -->
                 <failOnViolation>true</failOnViolation>
                 <failurePriority>1</failurePriority>
                 
@@ -475,13 +475,13 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.4</version>
-	<configuration>
+	<!-- <configuration>
       <failOnError>false</failOnError>
       <threshold>High</threshold>
       <effort>Default</effort>
       <xmlOutput>true</xmlOutput>
       
-   </configuration>        
+   </configuration> -->        
       </plugin>
   </plugins>
   </reporting>
