@@ -309,7 +309,30 @@
         	
         	
         	
-        	
+     <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <formats>                       
+                    <format>xml</format>
+                </formats>
+                <instrumentation>
+                    <excludes>
+                        <exclude>**/*Test.class</exclude>
+                        <exclude>**/Mock*.class</exclude>
+                    </excludes>
+                </instrumentation>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>cobertura</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>   	
         	
         	
         	
@@ -488,6 +511,20 @@
         <artifactId>maven-jxr-plugin</artifactId>
         <version>2.3</version>
     </plugin>
+    
+    
+    <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <formats>
+                    <format>xml</format>
+                </formats>
+            </configuration>
+     </plugin>
+    
+    
   </plugins>
   </reporting>
 </project>
