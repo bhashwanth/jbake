@@ -1280,7 +1280,7 @@ new Thread().run(); // same violation
   
   
   
-       <rule name="SwitchStmtsShouldHaveDefault"
+  <!--      <rule name="SwitchStmtsShouldHaveDefault"
          since="1.0"
           message="Include a default case in the switch statement"
           class="net.sourceforge.pmd.rules.XPathRule"
@@ -1310,7 +1310,7 @@ public class Foo {
 }
 ]]>
       </example>
-      </rule>
+      </rule> -->
   
   
   
