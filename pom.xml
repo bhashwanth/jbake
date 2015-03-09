@@ -65,8 +65,8 @@
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssa</maven.build.timestamp.format>
 		
 		<asciidoctorj.version>1.5.1</asciidoctorj.version>
- 		<!-- <commons.io.version>2.4</commons.io.version> -->
- 		<!-- <commons.configuration.version>1.9</commons.configuration.version> -->
+ 		<commons.io.version>2.4</commons.io.version>
+ 		<commons.configuration.version>1.9</commons.configuration.version>
 		<args4j.version>2.0.26</args4j.version>
 		<freemarker.version>2.3.20</freemarker.version>
 		<junit.version>4.11</junit.version>
@@ -345,7 +345,7 @@
 		</resources>
 	</build>
 	<dependencies>
-		<!-- <dependency>
+		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons.io.version}</version>
@@ -354,7 +354,7 @@
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
 			<version>${commons.configuration.version}</version>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
